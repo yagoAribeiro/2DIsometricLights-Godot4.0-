@@ -1,9 +1,80 @@
-[gd_scene load_steps=5 format=3 uid="uid://cubyir48ckgq4"]
+[gd_scene load_steps=6 format=3 uid="uid://cubyir48ckgq4"]
 
 [ext_resource type="PackedScene" uid="uid://bl4yjxkk2vv0i" path="res://scenes/tilemap.tscn" id="1_lx14w"]
 [ext_resource type="PackedScene" uid="uid://by0sbvu1urto8" path="res://scenes/light.tscn" id="2_4rof3"]
 [ext_resource type="PackedScene" uid="uid://vrlcy1awdwx4" path="res://scenes/enemy.tscn" id="3_sgbsm"]
 [ext_resource type="Texture2D" uid="uid://cwetyg0axmk1l" path="res://light.png" id="4_yctv4"]
+
+[sub_resource type="FontFile" id="FontFile_7t7wg"]
+face_index = null
+embolden = null
+transform = null
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/2/0/ascent = 0.0
+cache/0/2/0/descent = 0.0
+cache/0/2/0/underline_position = 0.0
+cache/0/2/0/underline_thickness = 0.0
+cache/0/2/0/scale = 1.0
+cache/0/2/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/2/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/1/0/ascent = 0.0
+cache/0/1/0/descent = 0.0
+cache/0/1/0/underline_position = 0.0
+cache/0/1/0/underline_thickness = 0.0
+cache/0/1/0/scale = 1.0
+cache/0/1/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/1/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+cache/0/25/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/25/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/10/0/ascent = 0.0
+cache/0/10/0/descent = 0.0
+cache/0/10/0/underline_position = 0.0
+cache/0/10/0/underline_thickness = 0.0
+cache/0/10/0/scale = 1.0
+cache/0/10/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/10/0/kerning_overrides/14/0 = Vector2(0, 0)
+cache/0/14/0/ascent = 0.0
+cache/0/14/0/descent = 0.0
+cache/0/14/0/underline_position = 0.0
+cache/0/14/0/underline_thickness = 0.0
+cache/0/14/0/scale = 1.0
+cache/0/14/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/2/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/1/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/25/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/10/0 = Vector2(0, 0)
+cache/0/14/0/kerning_overrides/14/0 = Vector2(0, 0)
 
 [node name="Node2D" type="Node2D"]
 
@@ -52,3 +123,13 @@ shadow_filter = 1
 shadow_filter_smooth = 6.5
 texture = ExtResource("4_yctv4")
 texture_scale = 0.5
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = 73.0
+offset_top = -52.0
+offset_right = 320.0
+offset_bottom = -27.0
+theme_override_fonts/normal_font = SubResource("FontFile_7t7wg")
+theme_override_font_sizes/normal_font_size = 14
+text = "Hold spacebar to control light position"
+fit_content = true

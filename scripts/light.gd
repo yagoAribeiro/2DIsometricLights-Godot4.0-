@@ -8,7 +8,6 @@ class_name Light
 @export var controllable: bool = true
 @onready var circle_area:CircleShape2D = get_node("Area2D/CollisionShape2D").shape
 @export var shadow_scale: Vector2 = Vector2(1.0, 1.8)
-@export var shadow_alpha: float = 0.8
 var in_area: Array
 
 func _process(_delta):
@@ -39,15 +38,15 @@ func is_duplicated(foot_reference: Marker2D)->bool:
 	return false
 	
 func apply_alpha(shadow: CanvasItem, distance_percent: float)->void:
-	var alpha: float = abs(shadow_alpha - distance_percent)
+	var alpha: float = abs(1-distance_percent)
 	shadow.modulate.a = alpha+(alpha*energy)/100
 		
-func apply_angle(shadow: CanvasItem, light_source_angle: float)->void:
+func apply_angle(shadow: Node2D, light_source_angle: float)->void:
 	var new_angle: float 
 	new_angle = light_source_angle-180+270
 	shadow.skew = deg_to_rad(new_angle)
-	shadow.scale.x = shadow_scale.x
-	shadow.scale.y = shadow_scale.y-shadow.skew/100  
+	shadow.scale.x = shadow_scale.x+abs(shadow.skew/100)
+	shadow.scale.y = shadow_scale.y-abs(shadow.skew/100)  
 		
 func _on_area_2d_body_entered(body):
 	if body is CharacterBody2D:
