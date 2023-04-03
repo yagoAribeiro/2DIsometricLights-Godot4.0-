@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://cubyir48ckgq4"]
+
+[ext_resource type="PackedScene" uid="uid://bl4yjxkk2vv0i" path="res://scenes/tilemap.tscn" id="1_lx14w"]
+[ext_resource type="PackedScene" uid="uid://by0sbvu1urto8" path="res://scenes/light.tscn" id="2_4rof3"]
+[ext_resource type="PackedScene" uid="uid://vrlcy1awdwx4" path="res://scenes/enemy.tscn" id="3_sgbsm"]
+[ext_resource type="Texture2D" uid="uid://cwetyg0axmk1l" path="res://light.png" id="4_yctv4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tilemap" parent="." instance=ExtResource("1_lx14w")]
+
+[node name="Enemy5" parent="." instance=ExtResource("3_sgbsm")]
+position = Vector2(222, 69)
+controllable = false
+
+[node name="Enemy6" parent="." instance=ExtResource("3_sgbsm")]
+position = Vector2(170, 56)
+controllable = false
+
+[node name="Enemy7" parent="." instance=ExtResource("3_sgbsm")]
+position = Vector2(182, 84)
+controllable = false
+
+[node name="Enemy8" parent="." instance=ExtResource("3_sgbsm")]
+position = Vector2(44, -14)
+controllable = false
+
+[node name="light3" parent="." instance=ExtResource("2_4rof3")]
+position = Vector2(-485, -444)
+color = Color(1, 0.658824, 0.027451, 1)
+energy = 2.0
+shadow_enabled = true
+
+[node name="light4" parent="." instance=ExtResource("2_4rof3")]
+position = Vector2(244, 10)
+color = Color(1, 0.658824, 0.92549, 1)
+energy = 1.32
+shadow_enabled = true
+texture_scale = 0.7
+controllable = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(118, 42)
+zoom = Vector2(1.5, 1.5)
+
+[node name="normal_light" type="PointLight2D" parent="."]
+visible = false
+position = Vector2(203, 22)
+energy = 2.36
+shadow_enabled = true
+shadow_filter = 1
+shadow_filter_smooth = 6.5
+texture = ExtResource("4_yctv4")
+texture_scale = 0.5

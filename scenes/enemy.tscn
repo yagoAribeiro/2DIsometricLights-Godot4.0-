@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://vrlcy1awdwx4"]
+
+[ext_resource type="Texture2D" uid="uid://c31gfjwmekkep" path="res://IsometricTRPGAssetPack_Entities.png" id="1_7mvjo"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_o5efq"]
+[ext_resource type="Script" path="res://scripts/AnimatedSprite2D.gd" id="2_sf6ii"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_docso"]
+size = Vector2(7, 9)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_es2xs"]
+atlas = ExtResource("1_7mvjo")
+region = Rect2(0, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22smy"]
+atlas = ExtResource("1_7mvjo")
+region = Rect2(16, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_se3nx"]
+atlas = ExtResource("1_7mvjo")
+region = Rect2(32, 272, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e7iab"]
+atlas = ExtResource("1_7mvjo")
+region = Rect2(48, 272, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pvw2b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_es2xs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22smy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_se3nx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e7iab")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D"]
+z_index = 3
+script = ExtResource("1_o5efq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 1.5)
+shape = SubResource("RectangleShape2D_docso")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 3
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_pvw2b")
+autoplay = "default"
+frame_progress = 0.552723
+script = ExtResource("2_sf6ii")
+
+[node name="foot_pos" type="Marker2D" parent="."]
+position = Vector2(0, 5)
